@@ -1,4 +1,5 @@
-# Projekt Schronisko
+# Projekt Schronisko "aDOGted"
+![logo](img/logo.png?raw=true)
 
 ### Struktura bazy danych:
 https://dbdiagram.io/d/5dcd5d4aedf08a25543dee51
