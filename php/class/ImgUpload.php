@@ -1,7 +1,10 @@
 <?php
 // Klasa dodawania zdjęć do bazy
 // unique_name -> unikalna nazwa zdjęcia w folderze np. id zwierzaka
-// target_dir -> sciezka zapisu zdjecia np. img/users lub img/animals_phoyo
+// target_dir -> sciezka zapisu zdjecia np. img/users lub img/animals_photo
+//
+// Klasa zwraca sciezke do umieszczenia w bazie jak jest ok
+// albo false gdy dodanie zdjecia sie nie powiodło
 class ImgUpload
 {
     public function __construct()
