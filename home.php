@@ -1,7 +1,7 @@
-<?php 
-function __autoload($class) {
-    include "$class.php";
-}
+<?php
+
+include "php/class/User.php";
+
 $user = new User();
 if(!empty($_SESSION['id'])){
     $uid = $_SESSION['id'];
