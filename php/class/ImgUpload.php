@@ -39,8 +39,9 @@ class ImgUpload
             return $uploadOk;
 // if everything is ok, try to upload file
         } else {
-            if (move_uploaded_file($_FILES["uzdjecie"]["tmp_name"], $target_file)) {
-                return $target_file;
+            $new_dir = $target_dir.$unique_name.".".$imageFileType;
+            if (move_uploaded_file($_FILES["uzdjecie"]["tmp_name"], $new_dir)) {
+                return "/".$new_dir;
             } else {
                 return false;
             }

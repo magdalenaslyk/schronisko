@@ -1,6 +1,6 @@
 <?php
 include "db.php";
-include "php/class/ImgUpload.php";
+include "ImgUpload.php";
 class User
 {
     protected $db;
@@ -58,8 +58,8 @@ class User
     // User registration Method
     public function userRegistration() {
         $img_uploader = new ImgUpload();
-        $path_zdjecia = $img_uploader->UploadImage($this->_login, "../../img/users/");
-        if(strlen($path_zdjecia) > 0){
+        $path_zdjecia = $img_uploader->UploadImage($this->_login, "img/users/");
+        if(strlen($path_zdjecia) > 1){
             $this->_path_zdjecia = $path_zdjecia;
         } else{
             return false;
@@ -76,8 +76,8 @@ class User
             email="'.$this->_email.'",
             login="'.$this->_login.'",   
             haslo="'.$haslo_hash.'", 
-            zdjecie="'.$this->$path_zdjecia.'",
-            rola="user"';             
+            zdjecie="'.$this->_path_zdjecia.'",
+            rola="user"';
             $result = $this->db->query($query) or die($this->db->error);                
             return true;
         } else {

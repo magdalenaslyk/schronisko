@@ -1,7 +1,6 @@
 <?php
-function __autoload($class) {
-    include "$class.php";
-}
+include "php/class/User.php";
+
 $user = new User();
  
 if ($user->getSession()===TRUE) {

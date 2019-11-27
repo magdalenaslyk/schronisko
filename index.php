@@ -1,7 +1,7 @@
 <?php 
-function __autoload($class) {
-    include "$class.php";
-}
+
+include "php/class/User.php";
+
 $msg = '';
 $user = new User();
 if (isset($_POST['submit'])) { 
@@ -49,7 +49,7 @@ if (isset($_POST['submit'])) {
             </div>
             
             <button type="submit" name="submit" class="float-right btn btn-primary">Login</button>
-            <a href="<?php print SITE_URL; ?>register.php">Register</a>          
+            <a href="<?php print SITE_URL; ?>register.php">Register</a>
         </form>
     </div>
 </div>
