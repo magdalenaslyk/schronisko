@@ -13,6 +13,7 @@ define('DB_DATABASE', 'schronisko');
 define('SITE_URL', $constants['base_url']);
  
 // klasa polaczenia bazy danych
+// test
 class DBConnection {
     private $_con;
     function __construct(){
