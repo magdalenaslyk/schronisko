@@ -1,5 +1,6 @@
 <?php
 include "db.php";
+include "php/class/ImgUpload.php";
 class User
 {
     protected $db;
@@ -11,6 +12,7 @@ class User
     private $_login;
     private $_haslo;
     private $_zdjecie;
+    private $_path_zdjecia;
     private $_rola;
 
     private $_userID;
@@ -45,6 +47,9 @@ class User
     public function setRola($rola) {
         $this->_rola = $rola;
     }
+    public function setPath_zdjecia($path_zdjecia) {
+        $this->_path_zdjecia = $path_zdjecia;
+    }
 
     public function __construct() {
         $this->db = new DBConnection();
@@ -52,6 +57,13 @@ class User
     }
     // User registration Method
     public function userRegistration() {
+        $img_uploader = new ImgUpload();
+        $path_zdjecia = $img_uploader->UploadImage($this->_login, "../../img/users/");
+        if(strlen($path_zdjecia) > 0){
+            $this->_path_zdjecia = $path_zdjecia;
+        } else{
+            return false;
+        }
         $haslo_hash = $this->hash($this->_haslo);
         $query = 'SELECT * FROM uzytkownik WHERE login="'.$this->_login.'" OR email="'.$this->_login.'"';           
         $result = $this->db->query($query) or die($this->db->error);            
@@ -64,7 +76,7 @@ class User
             email="'.$this->_email.'",
             login="'.$this->_login.'",   
             haslo="'.$haslo_hash.'", 
-            zdjecie="'.$this->_zdjecie.'",
+            zdjecie="'.$this->$path_zdjecia.'",
             rola="user"';             
             $result = $this->db->query($query) or die($this->db->error);                
             return true;

@@ -82,7 +82,7 @@ if(isset($_POST['submit'])){
  
 <div class="row">
     <div class="col-lg-12">
-        <form action="" method="post" name="reg">    
+        <form action="" method="post" name="reg" enctype="multipart/form-data">
                 <input type="text" name="uimie"></input><br>
                 <input type="text" name="unazwisko"></input><br>
                 <input type="date" name="udata"></input><br>
