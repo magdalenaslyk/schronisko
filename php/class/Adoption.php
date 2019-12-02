@@ -147,6 +147,7 @@ class Adoption
 
     public function newAdoption(){
         $usr = new User();
+        $this->setOplaconeDo(date("Y-m-d H:i:s"));
         if($usr->getSession()){
             $query = "SELECT id, id_zwierze, id_uzytkownik FROM adopcje WHERE id_zwierze = ".$this->_id_zwierze;
             $result = $this->db->query($query) or die($this->db->error);
@@ -158,12 +159,14 @@ class Adoption
                 oplacone_do="'.$this->_oplacone_do.'",
                 id_ost_platnosci="'.$this->_id_ost_platnosci.'",
                 status="'.$this->_status.'",
-                zdjecie="'.$this->getPathZdjecia();
+                zdjecie="'.$this->getPathZdjecia() .'"';
                 $result = $this->db->query($query) or die($this->db->error);
                 return true;
             } else {
                 return false;
             }
+        }else {
+            return false;
         }
     }
 
