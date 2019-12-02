@@ -170,6 +170,19 @@ class Adoption
         }
     }
 
+    public function getAdoptions(){
+        $query = "SELECT * FROM adopcje" . (strlen($this->_id_uzytkownik) > 0 ? "WHERE id_uzytkownik = " . trim($this->_id_uzytkownik) : "");
+        $result = $this->db->query($query) or die($this->db->error);
+        $count_row = $result->num_rows;
+        $ret = [];
+        for($i = 0; $i < $count_row; $i++)
+        {
+            $data = $result->fetch_array(MYSQLI_ASSOC);
+            array_push($ret, $data);
+        }
+        return $ret;
+    }
+
     public function getPathZdjecia(){
         $query = "SELECT zdjecie FROM zwierzeta WHERE id = ".$this->_id_zwierze;
         $result = $this->db->query($query) or die($this->db->error);
