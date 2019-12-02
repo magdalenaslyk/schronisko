@@ -96,7 +96,7 @@ class Animal
     public function addAnimal()
     {
         $img_uploader = new ImgUpload();
-        $path_zdjecia = $img_uploader->UploadImage($this->_imie, "img/photo_animal/");
+        $path_zdjecia = $img_uploader->UploadImage($this->_imie, "img/animals_photo/");
         if (strlen($path_zdjecia) > 1) {
             $this->_path_zdjecia = $path_zdjecia;
         } else {
