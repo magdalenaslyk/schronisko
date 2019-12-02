@@ -18,9 +18,6 @@ class Animal
     private $_szczepienia;
     private $_koszta;
 
-    private $_userID;
-    private $_name;
-
     public function setID($id) {
         $this->_id = $id;
     }
@@ -28,7 +25,7 @@ class Animal
         $this->_imie = $imie;
     }
     public function setGatunek($gatunek) {
-        $this->gatunek = $gatunek;
+        $this->_gatunek = $gatunek;
     }
     public function setRasa($rasa) {
         $this->_rasa = $rasa;
@@ -66,29 +63,32 @@ class Animal
         $this->db = $this->db->returnConnection();
     }
     // Add Animal Method
-    public function addAnimal() {
+    public function addAnimal()
+    {
         $img_uploader = new ImgUpload();
-        $path_zdjecia = $img_uploader->UploadImage($this->_imie, "img/photo_animal/");
-        if(strlen($path_zdjecia) > 1){
+        $path_zdjecia = $img_uploader->UploadImage($this->_imie, "img/animals_photo/");
+        if (strlen($path_zdjecia) > 1) {
             $this->_path_zdjecia = $path_zdjecia;
-        } else{
+        } else {
             return false;
         }
 
 
-            $query = 'INSERT INTO zwierzeta SET 
-            imie="'.$this->_imie.'",
-            gatunek="'.$this->_gatunek.'",
-            rasa="'.$this->_rasa.'",
-            plec="'.$this->_plec.'",
-            wiek="'.$this->_wiek.'",   
-            status="'.$this->_status.'",
-            opis="'.$this->_opis.'",
-            zdjecie="'.$this->_path_zdjecia.'",
-            kastracja="'.$this->_kastracja.'",
-            szczepienia="'.$this->_szczepienia.'",
-            koszta_miesiac="'.$this->_koszta.'";
-            $result = $this->db->query($query) or die($this->db->error);
-            return true;
-    
+        $query = 'INSERT INTO zwierzeta SET 
+            imie="' . $this->_imie . '",
+            gatunek="' . $this->_gatunek . '",
+            rasa="' . $this->_rasa . '",
+            plec="' . $this->_plec . '",
+            wiek="' . $this->_wiek . '",   
+            status="' . $this->_status . '",
+            opis="' . $this->_opis . '",
+            zdjecie="' . $this->_path_zdjecia . '",
+            kastracja="' . $this->_kastracja . '",
+            szczepienia="' . $this->_szczepienia . '",
+            koszta_miesiac="' . $this->_koszta . '"';
+        $result = $this->db->query($query) or die($this->db->error);
+        return true;
+        }
+
+    }
 ?>
