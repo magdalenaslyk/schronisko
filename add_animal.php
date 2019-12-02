@@ -1,12 +1,12 @@
 <?php
 include "php/class/Animal.php";
-include "php/class/User.php";
 
-$user = new User();
 
-if ($user->getSession()===TRUE) {
-    header("location:home.php");
-}
+$animal = new Animal();
+
+//if ($user->getSession()===TRUE) {
+//header("location:home.php");
+//}
 $status = '';
 
 $errors = array();
@@ -70,7 +70,7 @@ if(isset($_POST['submit'])){
         $animal->setKoszta($ukoszta);
         $addAnimal = $animal->addAnimal();
         if ($addAnimal) {
-            $status = "<div class='alert alert-success' style='text-align:center'>Added successful <a href='".SITE_URL."index.php'>Click here</a> to login</div>";
+            $status = "<div class='alert alert-success' style='text-align:center'>Added successful <a href='".SITE_URL."home.php'>Click here</a> to see</div>";
         } else {
             $status = "<div class='alert alert-danger' style='text-align:center'>Add failed. Try again.</div>";
         }
@@ -100,35 +100,37 @@ if(isset($_POST['submit'])){
     <div class="row">
         <div class="col-lg-12">
             <form action="" method="post" name="add" enctype="multipart/form-data">
-                <input type="text" name="uimie"></input><br>
-                <input type="text" name="ugatunek"></input><br>
-                <input type="text" name="urasa"></input><br>
-                <select name="uplec">
+                Imię zwierzaka: <input type="text" name="uimie"></input><br>
+                Gatunek: <select name="ugatunek">
+                    <option value="pies">Pies</option>
+                    <option value="kot">Kot</option>
+                </select><br>
+                Rasa: <input type="text" name="urasa"></input><br>
+                Płeć: <select name="uplec">
                     <option value="pies">Pies</option>
                     <option value="suka">Suka</option>
                     <option value="kot">Kot</option>
                     <option value="kotka">Kotka</option>
                 </select><br>
-                <input type="text" name="uwiek"></input><br>
-                <select name="ustatus">
+                Wiek: <input type="text" name="uwiek"></input><br>
+                Status: <select name="ustatus">
                     <option value="do adopcji">Do adopcji</option>
                     <option value="w domu">W domu</option>
                     <option value="died">Za tęczowym mostem</option>
                     <option value="zaadoptowany wirtualnie">Zaadoptowany wirtualnie</option>
-                </select>
-                <textarea name="uopis" rows="10" cols="30"></textarea><br>
-                <input type="file" name="uzdjecie" id="fileToUpload"></input><br>
-                <select name="ukastracja">
+                </select><br>
+                Opis: <textarea name="uopis" rows="10" cols="30"></textarea><br>
+                Zdjęcie: <input type="file" name="uzdjecie" id="fileToUpload"></input><br>
+                Czy zwierzę miało zabieg kastracji/sterylizacji? <select name="ukastracja">
                     <option value="tak">Tak</option>
                     <option value="nie">Nie</option>
-                </select>
-                <select name="uszczepienia">
+                </select><br>
+                Czy zwierzę jest szczepione? <select name="uszczepienia">
                     <option value="tak">Tak</option>
                     <option value="nie">Nie</option>
-                </select>
-                <input type="number" name="ukoszta" min="1" max="9999999999">
-                <button type="submit" name="submit" class="float-right btn btn-primary">Add</button>
-                <a href="<?php print SITE_URL; ?>index.php">Already registered? Click Here!</a>
+                </select><br>
+                Miesięczny koszt utrzymania: <input type="number" name="ukoszta" min="1" max="9999999999"><br>
+                <button type="submit" name="submit" class="float-right btn btn-primary">Dodaj zwierzaka</button>
             </form>
         </div>
     </div>
