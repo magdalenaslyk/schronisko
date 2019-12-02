@@ -181,4 +181,23 @@ class Adoption
         }
     }
 
+    public function updateOstatniaPlatnosc($ile_miesiecy, $id_platnosci){
+        $query = "SELECT oplacone_do FROM adopcje WHERE id = ".$this->_id;
+        $result = $this->db->query($query) or die($this->db->error);
+        $user_data = $result->fetch_array(MYSQLI_ASSOC);
+        $count_row = $result->num_rows;
+
+        if($count_row == 1){
+            $query = 'INSERT INTO adopcje SET 
+                id_ost_platnosc="'.$id_platnosci.'",
+                oplacone_do= DATE_ADD("'.$user_data["oplacone_do"].'", INTERVAL '.$ile_miesiecy.' DAY)'.$this->_id_uzytkownik.',
+                WHERE id ="'.$this->_id .'"';
+            $result = $this->db->query($query) or die($this->db->error);
+            return true;
+        } else
+        {
+            return false;
+        }
+    }
+
 }
