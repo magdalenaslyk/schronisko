@@ -157,7 +157,7 @@ class Adoption
                 id_zwierze="'.$this->_id_zwierze.'",
                 id_uzytkownik="'.$this->_id_uzytkownik.'",
                 oplacone_do="'.$this->_oplacone_do.'",
-                id_ost_platnosci="'.$this->_id_ost_platnosci.'",
+                id_ost_platnosci= NULL  ,
                 status="'.$this->_status.'",
                 zdjecie="'.$this->getPathZdjecia() .'"';
                 $result = $this->db->query($query) or die($this->db->error);
@@ -201,9 +201,10 @@ class Adoption
         $count_row = $result->num_rows;
 
         if($count_row == 1){
-            $query = 'INSERT INTO adopcje SET 
-                id_ost_platnosc="'.$id_platnosci.'",
-                oplacone_do= DATE_ADD("'.$user_data["oplacone_do"].'", INTERVAL '.$ile_miesiecy.' DAY)'.$this->_id_uzytkownik.',
+            $query = 'UPDATE adopcje SET 
+                id_ost_platnosci="'.$id_platnosci.'",
+                status= "oplacone",
+                oplacone_do= DATE_ADD("'.$user_data["oplacone_do"].'", INTERVAL '.$ile_miesiecy.' MONTH)
                 WHERE id ="'.$this->_id .'"';
             $result = $this->db->query($query) or die($this->db->error);
             return true;
