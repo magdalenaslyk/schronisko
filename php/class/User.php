@@ -20,6 +20,14 @@ class User
     private $_username;
     private $_password;
 
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->_id;
+    }
+
     public function setID($id) {
         $this->_id = $id;
     }
@@ -140,5 +148,7 @@ class User
             return FALSE;
         }
     }
+
+
 }
 ?>
