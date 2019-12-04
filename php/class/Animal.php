@@ -1,6 +1,6 @@
 <?php
-include "db.php";
-include "ImgUpload.php";
+//include "db.php";
+//include "ImgUpload.php";
 class Animal
 {
     protected $db;
