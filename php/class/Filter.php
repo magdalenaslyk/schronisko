@@ -93,7 +93,7 @@ class Filter
         $this->db = $this->db->returnConnection();
     }
     public function getAllAnimals() {
-        $query = "SELECT * FROM zwirzeta";
+        $query = "SELECT * FROM zwierzeta";
         $result = $this->db->query($query) or die($this->db->error);
         $animal_data = $result->fetch_array(MYSQLI_ASSOC);
         return $animal_data;
@@ -101,7 +101,7 @@ class Filter
 
     public function getAllAdverts()
     {
-        $query = "SELECT * FROM zwirzeta WHERE status = 'do adopcji'";
+        $query = "SELECT * FROM zwierzeta WHERE status = 'do adopcji'";
         $result = $this->db->query($query) or die($this->db->error);
         $animal_data = $result->fetch_array(MYSQLI_ASSOC);
         return $animal_data;
