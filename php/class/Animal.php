@@ -103,5 +103,23 @@ class Animal
         return true;
         }
 
+    // Edit Animal Method
+    public function editAnimal()
+    {
+        $query = 'UPDATE zwierzeta SET 
+            imie="' . $this->_imie . '",
+            gatunek="' . $this->_gatunek . '",
+            rasa="' . $this->_rasa . '",
+            plec="' . $this->_plec . '",
+            wiek="' . $this->_wiek . '",   
+            status="' . $this->_status . '",
+            opis="' . $this->_opis . '",
+            kastracja="' . $this->_kastracja . '",
+            szczepienia="' . $this->_szczepienia . '",
+            koszta_miesiac="' . $this->_koszta . '" 
+            WHERE id="'. $this->_id .'"';
+        $result = $this->db->query($query) or die($this->db->error);
+        return true;
+    }
     }
 ?>
