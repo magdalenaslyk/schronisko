@@ -14,6 +14,23 @@ class Payment
     /**
      * @return mixed
      */
+    public function getIleMiesiecy()
+    {
+        return $this->_ile_miesiecy;
+    }
+
+    /**
+     * @param mixed $ile_miesiecy
+     */
+    public function setIleMiesiecy($ile_miesiecy)
+    {
+        $this->_ile_miesiecy = $ile_miesiecy;
+    }
+
+
+    /**
+     * @return mixed
+     */
     public function getKwota()
     {
         return $this->_kwota;
@@ -100,24 +117,30 @@ class Payment
         $this->db = $this->db->returnConnection();
     }
 
-    public function newPayment()
+    public function makePayment()
     {
         $usr = new User();
         $this->setDataPlatnosci(date("Y-m-d H:i:s"));
         if($usr->getSession()){
-            $query = "SELECT id, id_zwierze, id_uzytkownik FROM adopcje WHERE id = ".$this->_id_adopcji;
+            $query = "SELECT id, id_zwierze, id_uzytkownik, status FROM adopcje WHERE id = '".$this->_id_adopcji."'";
             $result = $this->db->query($query) or die($this->db->error);
             $count_row = $result->num_rows;
             if($count_row == 1) {
-                $query = 'INSERT INTO historia_platnosci SET 
-                id_adopcji="'.$this->_id_adopcji.'",
+                $query = 'INSERT INTO historia_platnosci SET id_adopcji="'.$this->_id_adopcji.'",
                 id_klienta="'.$this->_id_klienta.'",
-                oplacone_do="'.$this->_oplacone_do.'",
                 data_platnosci="'.$this->_data_platnosci.'",
                 kwota="'.$this->_kwota.'",
                 ile_miesiecy="'.$this->_ile_miesiecy .'"';
+
                 $result = $this->db->query($query) or die($this->db->error);
-                return true;
+                $this->setId($this->db->insert_id);
+
+                $adoption = new Adoption();
+                $adoption->setId($this->getIdAdopcji());
+                $adoption->setIdUzytkownik($this->getIdKlienta());
+                $is_updated = $adoption->updateOstatniaPlatnosc($this->getIleMiesiecy(), $this->getId());
+
+                return $is_updated;
             } else {
                 return false;
             }
