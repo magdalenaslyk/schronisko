@@ -62,6 +62,19 @@ class Animal
         $this->db = new DBConnection();
         $this->db = $this->db->returnConnection();
     }
+
+    public function getAnimalInfo(){
+        $query = "SELECT * FROM zwierzeta WHERE id = '".$this->_id."'";
+        $result = $this->db->query($query) or die($this->db->error);
+        $count_row = $result->num_rows;
+        if ($count_row == 1) {
+            $animal_data = $result->fetch_array(MYSQLI_ASSOC);
+            return $animal_data;
+        }else{
+            return false;
+        }
+    }
+
     // Add Animal Method
     public function addAnimal()
     {
