@@ -1,6 +1,6 @@
 <?php
-include "db.php";
-include "ImgUpload.php";
+//include "DBConnection.php";
+//include "ImgUpload.php";
 class User
 {
     protected $db;

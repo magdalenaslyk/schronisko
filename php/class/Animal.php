@@ -1,5 +1,5 @@
 <?php
-//include "db.php";
+//include "DBConnection.php";
 //include "ImgUpload.php";
 class Animal
 {
@@ -63,6 +63,11 @@ class Animal
         $this->db = $this->db->returnConnection();
     }
 
+    public function updateStatusWhenAnimalAdopted(){
+        $query = 'UPDATE zwierzeta SET status = "w domu" WHERE id ="'.$this->_id .'"';
+        $result = $this->db->query($query) or die($this->db->error);
+        return true;
+    }
     public function getAnimalInfo(){
         $query = "SELECT * FROM zwierzeta WHERE id = '".$this->_id."'";
         $result = $this->db->query($query) or die($this->db->error);

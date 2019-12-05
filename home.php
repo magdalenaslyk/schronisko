@@ -1,6 +1,7 @@
 <?php
 
 include "php/class/User.php";
+include "php/class/DBConnection.php";
 
 $user = new User();
 if(!empty($_SESSION['id'])){
