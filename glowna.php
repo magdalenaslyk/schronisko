@@ -71,7 +71,6 @@ $animal_display = $filter->getAllAdverts();
             <div class="row">
                 
                 <?php
-                $i = 0;
                 foreach($animal_display as $row){
                     echo '<div class="col-lg-4 card-animal">
                         <div class="row" style="flex-direction:column;padding:15px;">';
@@ -85,8 +84,6 @@ $animal_display = $filter->getAllAdverts();
                     echo '<p>Opis:'.$row['opis'].'</p>';
 
                     echo '</div> </div>';
-                    if(i > 2) break;
-                    $i++;
                 }
                 ?>
                 </div>
