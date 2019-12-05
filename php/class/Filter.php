@@ -115,8 +115,11 @@ class Filter
     {
         $query = "SELECT * FROM zwierzeta WHERE status = 'do adopcji'";
         $result = $this->db->query($query) or die($this->db->error);
-        $animal_data = $result->fetch_array(MYSQLI_ASSOC);
-        return $animal_data;
+        while($row = $result->fetch_array(MYSQLI_ASSOC))
+        {
+            $rows[] = $row;
+        }
+        return $rows;
     }
 
 }
