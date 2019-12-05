@@ -1,5 +1,6 @@
 <?php
 include "php/class/Filter.php";
+//test
 $filter = new Filter();
 $animal_display = $filter->getAllAnimals();
 $i = 0;
