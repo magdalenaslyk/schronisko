@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #000;
+}
+
+/*globals*/
+.main-btn {
+  padding: 10px 25px;
+  background: #3366ff;
+  font-size: 25px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #fff;
+  display: inline-block;
+  border-radius: 15px;
+  text-decoration: none;
+}
+
+.main-btn:hover {
+  background: #0e3094;
+  color: #fff;
+}
+
+/*end of globals*/
+.hero-container {
+  background: url("/schronisko/img/site/pet.jpg");
+  background-clip: border-box;
+  background-size: cover;
+  min-height: 700px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.hero-container span {
+  color: #fff;
+  font-weight: 700;
+  font-size: 25px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.hero-container p {
+  color: #fff;
+}
+
+.hero-container-pages {
+  background: url("/schronisko/img/site/pet.jpg");
+  background-clip: border-box;
+  background-size: cover;
+  height: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.hero-container-pages span {
+  color: #fff;
+  font-weight: 700;
+  font-size: 25px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.hero-container-pages p {
+  color: #fff;
+}
+
+.light-text {
+  color: #fff;
+  font-size: 65px;
+}
+
+.adopt-section {
+  padding: 10px;
+}
+
+.adopt-section .adopt-subtitle {
+  font-size: 25px;
+  color: #666;
+}
+
+.animal-img {
+  max-width: 100%;
+  max-height: 150px;
+  margin: 0 auto;
+}
+
+.card-animal {
+  padding: 25px;
+  -webkit-box-shadow: 10px 10px 5px 0px #ebebeb;
+          box-shadow: 10px 10px 5px 0px #ebebeb;
+}
+/*# sourceMappingURL=styles.css.map */

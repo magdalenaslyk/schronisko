@@ -1,0 +1,84 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color:#000;
+}
+/*globals*/
+.main-btn{
+    padding:10px 25px;
+    background:#3366ff;
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color:#fff;
+    display: inline-block;
+    border-radius: 15px;
+    text-decoration: none;
+    &:hover{
+        background:#0e3094;
+        color:#fff;
+    }
+}
+
+/*end of globals*/
+.hero-container{
+    background:url("/schronisko/img/site/pet.jpg");
+    background-clip: border-box;
+    background-size: cover;
+    min-height:700px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    span{
+        color:#fff;
+        font-weight:700;
+        font-size: 25px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+    p{
+        color:#fff;
+    }
+}
+.hero-container-pages{
+    background:url("/schronisko/img/site/pet.jpg");
+    background-clip: border-box;
+    background-size: cover;
+    height:300px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    span{
+        color:#fff;
+        font-weight:700;
+        font-size: 25px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+    p{
+        color:#fff;
+    }
+}
+.light-text{
+    color:#fff;
+    font-size: 65px;
+
+}
+
+.adopt-section{
+    padding:10px;
+    .adopt-subtitle{
+        font-size: 25px;
+        color:#666;
+    }
+}
+.animal-img{
+    max-width:100%;
+    max-height: 150px;
+    margin:0 auto;
+}
+.card-animal{
+    padding:25px;
+    box-shadow: 10px 10px 5px 0px rgba(235,235,235,1);
+}
