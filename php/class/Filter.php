@@ -92,10 +92,22 @@ class Filter
         $this->db = new DBConnection();
         $this->db = $this->db->returnConnection();
     }
+    public function getAnimalsAmmount() {
+        $query = "SELECT * FROM zwierzeta";
+        $result = $this->db->query($query) or die($this->db->error);
+        $animal_data = [];
+        if($rows_counter = $result){
+            $row_cnt = $rows_counter->num_rows;
+        }
+        return $row_cnt;
+    }
     public function getAllAnimals() {
         $query = "SELECT * FROM zwierzeta";
         $result = $this->db->query($query) or die($this->db->error);
-        $animal_data = $result->fetch_array(MYSQLI_ASSOC);
+        $animal_data = [];
+        while($content = $result->fetch_array(MYSQLI_ASSOC)){
+            $animal_data[] = $content;
+        }
         return $animal_data;
     }
 
