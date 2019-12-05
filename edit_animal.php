@@ -7,7 +7,10 @@ $usr = new User();
 if($usr->getSession()){
     $usr->setID($_SESSION['id']);
     $dane_usera = $usr->getUserInfo();
-    $usr->setRola($dane_usera["rola"]);
+    $usr->setRola($dane_usera['rola']);
+}
+if ($dane_usera['rola'] != 'admin' ){
+    header("location:home.php");
 }
 
 

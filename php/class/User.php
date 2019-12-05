@@ -1,5 +1,5 @@
 <?php
-//include "DBConnection.php";
+//include "php/class/DBConnection.php";
 //include "ImgUpload.php";
 class User
 {
