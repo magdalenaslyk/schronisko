@@ -1,6 +1,7 @@
 <?php 
 
 include "php/class/User.php";
+include "php/class/DBConnection.php";
 
 $msg = '';
 $user = new User();

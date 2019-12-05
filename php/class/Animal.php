@@ -1,5 +1,5 @@
 <?php
-//include "db.php";
+//include "DBConnection.php";
 //include "ImgUpload.php";
 class Animal
 {

@@ -1,6 +1,6 @@
 <?php
-//include "db.php";
-include "User.php";
+//include "DBConnection.php";
+//include "User.php";
 class Adoption
 {
     protected $db;

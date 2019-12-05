@@ -2,8 +2,9 @@
 include "php/class/Adoption.php";
 include "php/class/Payment.php";
 include "php/class/Animal.php";
-
-
+include "php/class/DBConnection.php";
+include "php/class/ImgUpload.php";
+include "php/class/User.php";
 $usr = new User();
 
 if($usr->getSession()){
@@ -12,11 +13,11 @@ if($usr->getSession()){
 
 
 $adop = new Adoption();
-$adop->setIdZwierze(5);
+$adop->setIdZwierze(4);
 $adop->setIdUzytkownik($usr->getId());
 //var_dump($adop->getPathZdjecia());
-//$adop->newAdoption();
-$adop->setId(6);
+$adop->newAdoption();
+//$adop->setId(6);
 
 
 $pay = new Payment();

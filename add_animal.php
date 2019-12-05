@@ -1,6 +1,6 @@
 <?php
 include "php/class/Animal.php";
-
+include "php/class/DBConnection.php";
 
 $animal = new Animal();
 
