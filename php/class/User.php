@@ -113,7 +113,7 @@ class User
     
     // get User Information
     public function getUserInfo() {
-        $query = "SELECT id, imie, email FROM uzytkownik WHERE id = ".$this->_id;
+        $query = "SELECT id, imie, email, rola FROM uzytkownik WHERE id = ".$this->_id;
         $result = $this->db->query($query) or die($this->db->error);
         $user_data = $result->fetch_array(MYSQLI_ASSOC);
         return $user_data;
