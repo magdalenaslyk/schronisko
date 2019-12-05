@@ -23,6 +23,15 @@ class User
     /**
      * @return mixed
      */
+    public function getRola()
+    {
+        return $this->_rola;
+    }
+
+
+    /**
+     * @return mixed
+     */
     public function getId()
     {
         return $this->_id;
