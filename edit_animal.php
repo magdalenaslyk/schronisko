@@ -13,7 +13,7 @@ while($i<$animal_display){
     echo '<p>Wiek:'.$animal_display[$i]['wiek'].'</p>';
     echo '<p>Status:'.$animal_display[$i]['status'].'</p>';
     echo '<p>Opis:'.$animal_display[$i]['opis'].'</p>';
-    echo "<a href=\'index.php?a=del&amp;id={$animal_display[$i]['id']}\'>Edytuj</a>";
+    echo "<a href=\'edit_animal.php?a=del&amp;id={$animal_display[$i]['id']}\'>Edytuj</a>";
     $i++;
 }
 ?>
