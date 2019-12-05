@@ -1,6 +1,14 @@
 <?php
 include "php/class/Filter.php";
-//test
+$usr = new User();
+
+if($usr->getSession()){
+    $usr->setID($_SESSION['id']);
+    $dane_usera = $usr->getUserInfo();
+    $usr->setRola($dane_usera["rola"]);
+}
+
+
 $filter = new Filter();
 $animal_display = $filter->getAllAnimals();
 $i = 0;
