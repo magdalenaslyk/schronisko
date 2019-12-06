@@ -58,9 +58,14 @@ $animal_display = $filter->getAllAdverts();
                         echo '<p>Wiek:'.$row['wiek'].'</p>';
                         echo '<p>Status:'.$row['status'].'</p>';
                         echo '<p>Opis:'.$row['opis'].'</p>';
-                        
+                        ?>
+                        <form action="test.php" method="post" name="zid">
+                            <input type="hidden" value="<?php echo $row["id"] ?>" name="zid" hidden/>
+                            <button type="submit" name="submit" class="float-right btn btn-primary">PRZYGARNIJ</button>
+                        </form>
+                        <?php
                         echo '</div> </div>';
-                        $i++;
+
                     }
                 ?>
                 </div>

@@ -2,6 +2,7 @@
 
 include "php/class/User.php";
 include "php/class/DBConnection.php";
+include "php/class/Adoption.php";
 
 $user = new User();
 if(!empty($_SESSION['id'])){
@@ -37,6 +38,20 @@ $userInfo = $user->getUserInfo();
         <p><strong>Email: </strong><?php print $userInfo['email'];?></p>
     </div>
 </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <?php
+                $ad = new Adoption();
+                $ad->setIdUzytkownik($user->getId());
+                $adopcje = $ad->getUserAdoptions();
+                foreach ($adopcje as $row){
+                    echo "<p><strong>Adopcja: </strong>". $row['id']." status: ". $row["status"]."</p>";
+
+                }
+
+            ?>
+        </div>
+    </div>
 <?php
 //include('templates/footer.php');
 ?>
