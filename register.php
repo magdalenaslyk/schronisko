@@ -1,6 +1,8 @@
 <?php
+include "php/class/DBConnection.php";
+include "php/class/ImgUpload.php";
 include "php/class/User.php";
-//include "php/class/DBConnection.php";
+
 $user = new User();
  
 if ($user->getSession()===TRUE) {
