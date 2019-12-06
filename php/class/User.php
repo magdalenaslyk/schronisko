@@ -1,5 +1,5 @@
 <?php
-//include "DBConnection.php";
+//include "php/class/DBConnection.php";
 //include "ImgUpload.php";
 class User
 {
@@ -19,6 +19,15 @@ class User
     private $_name;
     private $_username;
     private $_password;
+
+    /**
+     * @return mixed
+     */
+    public function getRola()
+    {
+        return $this->_rola;
+    }
+
 
     /**
      * @return mixed
@@ -113,7 +122,7 @@ class User
     
     // get User Information
     public function getUserInfo() {
-        $query = "SELECT id, imie, email FROM uzytkownik WHERE id = ".$this->_id;
+        $query = "SELECT id, imie, email, rola FROM uzytkownik WHERE id = ".$this->_id;
         $result = $this->db->query($query) or die($this->db->error);
         $user_data = $result->fetch_array(MYSQLI_ASSOC);
         return $user_data;
