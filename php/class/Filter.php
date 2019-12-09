@@ -122,6 +122,28 @@ class Filter
         return $rows;
     }
 
+    public function getAllinhome()
+    {
+        $query = "SELECT * FROM zwierzeta WHERE status = 'w domu'";
+        $result = $this->db->query($query) or die($this->db->error);
+        while($row = $result->fetch_array(MYSQLI_ASSOC))
+        {
+            $rows[] = $row;
+        }
+        return $rows;
+    }
+
+    public function getAllinheaven()
+    {
+        $query = "SELECT * FROM zwierzeta WHERE status = 'died'";
+        $result = $this->db->query($query) or die($this->db->error);
+        while($row = $result->fetch_array(MYSQLI_ASSOC))
+        {
+            $rows[] = $row;
+        }
+        return $rows;
+    }
+
 }
 ?>
 
