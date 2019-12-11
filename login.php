@@ -10,8 +10,14 @@ if (isset($_POST['submit'])) {
     $user->setLogin($emailusername);
     $user->setHaslo($password);   
     $login = $user->doLogin();
-    if ($login) {           
-       header("location:home.php");
+    if ($login) {     
+      if($_SESSION['rola']==="admin"){
+        header("location:admin_panel.php");
+      } 
+      else{
+        header("location:user_panel.php");
+      }     
+
     } else {            
         $msg = 'Wrong username or password';
     }
@@ -27,7 +33,7 @@ if (isset($_POST['submit'])) {
         <div class="collapse navbar-collapse" id="navbarText">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="/schronisko/glowna.php">Glowna <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="/schronisko/index.php">Glowna <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/schronisko/adoption.php">Do adopcji</a>
@@ -72,5 +78,6 @@ if (isset($_POST['submit'])) {
 </div>
 </div>
       
-</body>
-</html>
+<?php
+include('templates/footer.php');
+?>

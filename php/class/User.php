@@ -104,7 +104,7 @@ class User
     
     // User Login Method
     public function doLogin() {     
-        $query = 'SELECT login,haslo,id from uzytkownik WHERE email="'.$this->_login.'" or login="'.$this->_login.'"';        
+        $query = 'SELECT login,haslo,id,rola from uzytkownik WHERE email="'.$this->_login.'" or login="'.$this->_login.'"';        
         $result = $this->db->query($query) or die($this->db->error);
         $user_data = $result->fetch_array(MYSQLI_ASSOC);
         //print_r($user_data);
@@ -113,6 +113,7 @@ class User
             if (!empty($user_data['haslo']) && $this->verifyHash($this->_haslo, $user_data['haslo']) == TRUE) {
                 $_SESSION['login'] = TRUE;
                 $_SESSION['id'] = $user_data['id'];
+                $_SESSION['rola'] = $user_data['rola'];
                 return TRUE;
             } else {
                 return FALSE;
