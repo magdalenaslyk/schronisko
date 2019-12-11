@@ -31,6 +31,6 @@ if($usr->getSession()){
 
         $pay->setKwota($pay->getIleMiesiecy() * $zwierz_data["koszta_miesiac"]);
         $ok = $pay->makePayment();
-        if($ok)header("location:home.php");
+        if($ok)header("location:user_panel.php");
     }
 }
