@@ -18,7 +18,7 @@ $animal_display = $filter->getAllAdverts();
         <div class="collapse navbar-collapse" id="navbarText">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="/schronisko/glowna.php">Glowna <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="/schronisko/index.php">Glowna <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/schronisko/adoption.php">Do adopcji</a>
@@ -59,7 +59,7 @@ $animal_display = $filter->getAllAdverts();
                         echo '<p>Status:'.$row['status'].'</p>';
                         echo '<p>Opis:'.$row['opis'].'</p>';
                         ?>
-                        <form action="test.php" method="post" name="zid">
+                        <form action="user_panel.php" method="post" name="zid">
                             <input type="hidden" value="<?php echo $row["id"] ?>" name="zid" hidden/>
                             <button type="submit" name="submit" class="float-right btn btn-primary">PRZYGARNIJ</button>
                         </form>
@@ -73,5 +73,6 @@ $animal_display = $filter->getAllAdverts();
                 <div class="col-lg-4"></div>
             </div>
       </div>
-</body>
-</html>
+      <?php
+include('templates/footer.php');
+?>
