@@ -2,6 +2,7 @@
 include "php/class/DBConnection.php";
 include "php/class/ImgUpload.php";
 include "php/class/User.php";
+include "templates/header.php";
 
 $user = new User();
  
@@ -62,38 +63,66 @@ if(isset($_POST['submit'])){
 }
  
 ?>
-<?php
-//include('templates/header.php');
-?>
-<div class="row">
-    <div class="col-lg-12">
-        <h2>Simple Login & Registration system using PHP & MySQL</h2>                 
+    <div class="container-fluid hero-container-pages">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h1 class="text-light display-1">Zarejestruj się</h1>
+            </div>
+        </div>
     </div>
-</div>
-<div class="row">
-    <div class="col-lg-12"><?php echo $status; ?></div>
-</div>
-<div class="row">
-    <div class="col-lg-12"><ul><?php 
-        foreach ($errors as $value) {
-            echo '<li style="color: red; font-size: 13px;">'.$value.'</li>' ;
-        }
-    ?></ul></div>
-</div>
- 
-<div class="row">
-    <div class="col-lg-12">
-        <form action="" method="post" name="reg" enctype="multipart/form-data">
-                <input type="text" name="uimie"></input><br>
-                <input type="text" name="unazwisko"></input><br>
-                <input type="date" name="udata"></input><br>
-                <input type="email" name="uemail"></input><br>
-                <input type="text" name="ulogin"></input><br>
-                <input type="password" name="uhaslo"></input><br>
-                <input type="file" name="uzdjecie" id="fileToUpload"></input><br>    
-            <button type="submit" name="submit" class="float-right btn btn-primary">Register</button>
-            <a href="<?php print SITE_URL; ?>index.php">Already registered? Click Here!</a>          
-        </form>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 text-center mt-5">
+            <h2>Zarejestruj się do naszego serwisu</h2>                 
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12"><?php echo $status; ?></div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12"><ul><?php 
+            foreach ($errors as $value) {
+                echo '<li style="color: red; font-size: 13px;">'.$value.'</li>' ;
+            }
+        ?></ul></div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <form action="" method="post" name="reg" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="imie">Imię</label>
+                <input type="text" name="uimie" class="form-control" placeholder="Imię"></input>
+            </div>
+            <div class="form-group">
+                <label for="imie">Nazwisko</label>
+                <input type="text" name="unazwisko" class="form-control" placeholder="Nazwisko"></input>
+            </div>
+            <div class="form-group">
+                <label for="imie">Data urodzenia</label>
+                <input type="date" name="udata" class="form-control" placeholder="Data urodzenia"></input>
+            </div>
+            <div class="form-group">
+                <label for="imie">Adres email</label>
+                <input type="email" name="uemail" class="form-control" placeholder="Adres email"></input>
+            </div>
+            <div class="form-group">
+                <label for="imie">Login w serwisie</label>
+                <input type="text" name="ulogin" class="form-control" placeholder="Twój login w serwisie"></input>
+            </div>
+            <div class="form-group">
+                <label for="imie">Twoje hasło</label>
+                <input type="password" name="uhaslo" class="form-control" placeholder="Hasło"></input>
+            </div>
+            <div class="form-group">
+                <label for="imie">Zdjęcie użytkownika</label>
+                <input type="file" name="uzdjecie" id="fileToUpload" class="form-control-file"></input>
+            </div>
+                <button type="submit" name="submit" class="float-right btn btn-primary">Zarejestruj</button>
+                <a href="<?php print SITE_URL; ?>login.php">Zarejestrowany? To co tu robisz? Zaloguj się!</a>
+            </form>
+        </div>
     </div>
 </div>
 <?php

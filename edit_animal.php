@@ -3,6 +3,7 @@ include "php/class/Filter.php";
 include "php/class/DBConnection.php";
 include "php/class/User.php";
 include "php/class/Animal.php";
+include "templates/Header.php";
 ?>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
