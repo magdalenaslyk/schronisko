@@ -5,24 +5,22 @@
 class Filter
 {
 //do filtracji
-//    protected $db;
-//    private $_id;
-//    private $_gatunek;
-//    private $_rasa;
-//    private $_plec;
-//    private $_status;
-//    private $_do_adopcji;
-//    private $_kastracj;
-//    private $_szczepienie;
-
-zmiany krzysztofa kani
+    protected $db;
+    private $_id;
+    private $_gatunek;
+    private $_rasa;
+    private $_plec;
+    private $_status;
+    private $_do_adopcji;
+    private $_kastracj;
+    private $_szczepienie;
 
     //potrzebne do pobrania całości
-//    private $_imie;
-//    private $_wiek;
-//    private $_opis;
-//    private $_zdjecie;
-//    private $_koszta_miesiac;
+    private $_imie;
+    private $_wiek;
+    private $_opis;
+    private $_zdjecie;
+    private $_koszta_miesiac;
 
 
     public function setID($id) {
@@ -112,7 +110,7 @@ zmiany krzysztofa kani
         }
         return $animal_data;
     }
-
+//filtracja po statusie
     public function getAllAdverts()
     {
         $query = "SELECT * FROM zwierzeta WHERE status = 'do adopcji'";
@@ -124,10 +122,94 @@ zmiany krzysztofa kani
         return $rows;
     }
 
+    public function getAllInHome()
+    {
+        $query = "SELECT * FROM zwierzeta WHERE status = 'w domu'";
+        $result = $this->db->query($query) or die($this->db->error);
+        while($row = $result->fetch_array(MYSQLI_ASSOC))
+        {
+            $rowt[] = $row;
+        }
+        return $rowt;
+    }
 
-    public function getAllinheaven()
+    public function getAllInHeaven()
     {
         $query = "SELECT * FROM zwierzeta WHERE status = 'died'";
+        $result = $this->db->query($query) or die($this->db->error);
+        while($row = $result->fetch_array(MYSQLI_ASSOC))
+        {
+            $rowz[] = $row;
+        }
+        return $rowz;
+    }
+//filtracja po gatunku
+    public function getAllDog()
+    {
+        $query = "SELECT * FROM zwierzeta WHERE gatunek = 'pies'";
+        $result = $this->db->query($query) or die($this->db->error);
+        while($row = $result->fetch_array(MYSQLI_ASSOC))
+        {
+            $rowi[] = $row;
+        }
+        return $rowi;
+    }
+    public function getAllCat()
+    {
+        $query = "SELECT * FROM zwierzeta WHERE gatunek = 'kot'";
+        $result = $this->db->query($query) or die($this->db->error);
+        while($row = $result->fetch_array(MYSQLI_ASSOC))
+        {
+            $rowc[] = $row;
+        }
+        return $rowc;
+    }
+
+//fitracja po rasie
+    public function getAllMieszaniec()
+    {
+        $query = "SELECT * FROM zwierzeta WHERE rasa = 'Mieszaniec'";
+        $result = $this->db->query($query) or die($this->db->error);
+        while($row = $result->fetch_array(MYSQLI_ASSOC))
+        {
+            $rowm[] = $row;
+        }
+        return $rowm;
+    }
+    public function getAllJamnik()
+    {
+        $query = "SELECT * FROM zwierzeta WHERE rasa = 'Jamnik'";
+        $result = $this->db->query($query) or die($this->db->error);
+        while($row = $result->fetch_array(MYSQLI_ASSOC))
+        {
+            $rowj[] = $row;
+        }
+        return $rowj;
+    }
+    public function getAllKundel()
+    {
+        $query = "SELECT * FROM zwierzeta WHERE rasa = 'Kundel'";
+        $result = $this->db->query($query) or die($this->db->error);
+        while($row = $result->fetch_array(MYSQLI_ASSOC))
+        {
+            $rowk[] = $row;
+        }
+        return $rowk;
+    }
+//filtracja po plec
+    public function getAllPies()
+    {
+        $query = "SELECT * FROM zwierzeta WHERE plec = 'pies'";
+        $result = $this->db->query($query) or die($this->db->error);
+        while($row = $result->fetch_array(MYSQLI_ASSOC))
+        {
+            $rowp[] = $row;
+        }
+        return $rowp;
+    }
+    public function getAllSuka()
+    {
+        $query = "SELECT * FROM zwierzeta WHERE plec = 'suka'";
         $result = $this->db->query($query) or die($this->db->error);
         while($row = $result->fetch_array(MYSQLI_ASSOC))
         {
@@ -135,7 +217,68 @@ zmiany krzysztofa kani
         }
         return $rows;
     }
-
+    public function getAllKot()
+    {
+        $query = "SELECT * FROM zwierzeta WHERE plec = 'kot'";
+        $result = $this->db->query($query) or die($this->db->error);
+        while($row = $result->fetch_array(MYSQLI_ASSOC))
+        {
+            $rowko[] = $row;
+        }
+        return $rowko;
+    }
+    public function getAllKotka()
+    {
+        $query = "SELECT * FROM zwierzeta WHERE plec = 'kotka'";
+        $result = $this->db->query($query) or die($this->db->error);
+        while($row = $result->fetch_array(MYSQLI_ASSOC))
+        {
+            $rowkt[] = $row;
+        }
+        return $rowkt;
+    }
+//filtracja po kastracja
+    public function getAllKastracja()
+    {
+        $query = "SELECT * FROM zwierzeta WHERE kastracja = 'tak'";
+        $result = $this->db->query($query) or die($this->db->error);
+        while($row = $result->fetch_array(MYSQLI_ASSOC))
+        {
+            $rowt[] = $row;
+        }
+        return $rowt;
+    }
+    public function getAllNoKastracja()
+    {
+        $query = "SELECT * FROM zwierzeta WHERE kastracja = 'nie'";
+        $result = $this->db->query($query) or die($this->db->error);
+        while($row = $result->fetch_array(MYSQLI_ASSOC))
+        {
+            $rown[] = $row;
+        }
+        return $rown;
+    }
+//filtracja po szczepieniach
+    public function getAllSzczepienia()
+    {
+        $query = "SELECT * FROM zwierzeta WHERE szczepienia = 'tak'";
+        $result = $this->db->query($query) or die($this->db->error);
+        while($row = $result->fetch_array(MYSQLI_ASSOC))
+        {
+            $rowta[] = $row;
+        }
+        return $rowta;
+    }
+    public function getAllNoSzczepienia()
+    {
+        $query = "SELECT * FROM zwierzeta WHERE szczepienia = 'nie'";
+        $result = $this->db->query($query) or die($this->db->error);
+        while($row = $result->fetch_array(MYSQLI_ASSOC))
+        {
+            $rowni[] = $row;
+        }
+        return $rowni;
+    }
 }
 ?>
 
