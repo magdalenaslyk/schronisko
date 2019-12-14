@@ -5,22 +5,24 @@
 class Filter
 {
 //do filtracji
-    protected $db;
-    private $_id;
-    private $_gatunek;
-    private $_rasa;
-    private $_plec;
-    private $_status;
-    private $_do_adopcji;
-    private $_kastracj;
-    private $_szczepienie;
+//    protected $db;
+//    private $_id;
+//    private $_gatunek;
+//    private $_rasa;
+//    private $_plec;
+//    private $_status;
+//    private $_do_adopcji;
+//    private $_kastracj;
+//    private $_szczepienie;
+
+zmiany krzysztofa kani
 
     //potrzebne do pobrania całości
-    private $_imie;
-    private $_wiek;
-    private $_opis;
-    private $_zdjecie;
-    private $_koszta_miesiac;
+//    private $_imie;
+//    private $_wiek;
+//    private $_opis;
+//    private $_zdjecie;
+//    private $_koszta_miesiac;
 
 
     public function setID($id) {
@@ -122,16 +124,6 @@ class Filter
         return $rows;
     }
 
-    public function getAllinhome()
-    {
-        $query = "SELECT * FROM zwierzeta WHERE status = 'w domu'";
-        $result = $this->db->query($query) or die($this->db->error);
-        while($row = $result->fetch_array(MYSQLI_ASSOC))
-        {
-            $rows[] = $row;
-        }
-        return $rows;
-    }
 
     public function getAllinheaven()
     {
