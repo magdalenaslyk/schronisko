@@ -11,7 +11,7 @@ $animal_display = $filter->getAllAdverts();
       <div class="container-fluid hero-container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h1 class="text-light display-1">Zaadoptuj przjaciela</h1>
+                <h1 class="text-light display-1">Zaadoptuj przyjaciela</h1>
             </div>
         </div>
       </div>
