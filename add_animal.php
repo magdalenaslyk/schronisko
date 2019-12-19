@@ -93,6 +93,16 @@ if(isset($_POST['submit'])){
 
 ?>
 <div class="container">
+<div class="row my-5">
+        <div class="col-lg-12">
+            <form action="" method="post">
+                <a class="btn btn-primary"  href="admin_panel.php" role="button">Zarządzaj płatnościami</a>
+                <a class="btn btn-primary"  href="add_animal.php" role="button">Dodaj zwierzaka</a>
+                <a class="btn btn-primary"  href="edit_animal.php" role="button">Edytuj zwierzaka</a>
+                <!--<button type="submit" class="btn btn-primary" name="add_animal">Dodaj zwierzaka</button>-->
+            </form>
+        </div>
+    </div>
     <div class="row">
         <div class="col-lg-12 text-center mt-5">
             <h2>Dodawanie zwierzaka do bazy danych</h2>

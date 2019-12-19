@@ -143,6 +143,16 @@ class Filter
         }
         return $rows;
     }
+    public function getAnimalFiltered($filter)
+    {
+        $query = "SELECT * FROM zwierzeta WHERE status = '$filter'";
+        $result = $this->db->query($query) or die($this->db->error);
+        while($row = $result->fetch_array(MYSQLI_ASSOC))
+        {
+            $rows[] = $row;
+        }
+        return $rows;
+    }
 
 }
 ?>

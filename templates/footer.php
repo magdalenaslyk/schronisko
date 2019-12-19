@@ -1,11 +1,30 @@
 <?php
 //TODO: Header template
 ?>
-<footer>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2 bg--blue text-center">
+            <h1>Naszą misją jest pomoc</h1>
+            <p>Wspomóż nas w dążeniu do uszczęśliwieniu wszystkich bezdomnych zwierzaków</p>
+        </div>
+    </div>
+</div>
+<footer class="mt-5">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12 text-center">
+            <div class="col-lg-6 text-center">
             <img src="/schronisko/img/site/logo.png">
+            </div>
+            <div class="col-lg-6 text-center">
+            <h3>Zaprojektowane przez:</h3>
+            <ul class="list-group">
+                <li class="list-group-item">Michał Mackiewicz</li>
+                <li class="list-group-item">Krzystof Kania</li>
+                <li class="list-group-item">Magdalena Słyk</li>
+                <li class="list-group-item">Monika Leszniewska</li>
+                <li class="list-group-item">Maciej Broczek</li>
+                <li class="list-group-item">Alicja Krzanecka</li>
+            </ul>
             </div>
         </div>
     </div>

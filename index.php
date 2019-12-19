@@ -13,8 +13,8 @@ $animal_display = $filter->getAllAdverts();
                 <span>Zaadoptuj przjaciela</span>
                 <h1 class="light-text">Nasze schronisko elektroniczne</h1>
                 <p>Teraz możesz pomagać zwierzakom nawet jeśli nie ma Cię w pobliżu</p>
-                <a class="main-btn" href="#">Przygarnij zwierzaka</a>
-                <a class="main-btn" href="#">Adopcja wirtualna</a>
+                <a class="main-btn" href="<?php echo SITE_URL;?>/user_panel.php">Przygarnij zwierzaka</a>
+                <a class="main-btn" href="<?php echo SITE_URL;?>/user_panel.php">Adopcja wirtualna</a>
             </div>
             <div class="col-lg-4"></div>
         </div>
@@ -30,12 +30,12 @@ $animal_display = $filter->getAllAdverts();
               <div class="col-lg-6 adopt">
                   <h2 class="adopt-subtitle">ZAADPTUJ ZWIERZAKA</h2>
                   <p>Bezpośrednio pomóż naszym pupilom zostając jego właścicielem! Pobierz formularz, wypełnij a następnie wyślij by rozpocząć adopcję.</p>
-                  <a class="main-btn" href="#">Pobierz formularz</a>
+                  <a class="main-btn" href="<?php echo SITE_URL;?>/user_panel.php">Pobierz formularz</a>
                 </div>
               <div class="col-lg-6 adopt">
                   <h2 class="adopt-subtitle">ADOPCJA WIRTUALNA</h2>
                   <p>Chcesz pomóc zwierzakom, lecz nie masz na to warunków? Dokonaj wpłaty na jego utrzymanie by zostać jego wirtualnym właścicielem!</p>
-                  <a class="main-btn" href="#">Zaadoptuj wirtualnie</a>
+                  <a class="main-btn" href="<?php echo SITE_URL;?>/user_panel.php">Zaadoptuj wirtualnie</a>
                 </div>
           </div>
       </div>

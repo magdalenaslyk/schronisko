@@ -148,5 +148,15 @@ class Payment
             return false;
         }
     }
+    public function getPaymentsHistory()
+    {
+        $query = "SELECT * FROM historia_platnosci ";
+        $result = $this->db->query($query) or die($this->db->error);
+        while($row = $result->fetch_array(MYSQLI_ASSOC))
+        {
+            $rows[] = $row;
+        }
+        return $rows;
+    }
 
 }

@@ -124,6 +124,7 @@ class Animal
             koszta_miesiac="' . $this->_koszta . '" 
             WHERE id="'. $this->_id .'"';
         $result = $this->db->query($query) or die($this->db->error);
+        echo "adam";
         return true;
     }
     }
