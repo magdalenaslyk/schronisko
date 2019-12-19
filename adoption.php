@@ -6,7 +6,6 @@ include "php/class/DBConnection.php";
 ?>
 <?php 
 $filter = new Filter();
-$animal_display = $filter->getAllAdverts();
 if(isset($_GET['status'])){
     $adam = $_GET['status'];
     $animal_filtered = $filter->getAnimalFiltered($adam);
@@ -46,7 +45,21 @@ else{
             <div class="row">
                 
                 <?php 
-                    foreach($animal_filtered as $row){
+                if($animal_filtered=="empty"){
+                    echo "
+                    <div class='col-lg-12'>
+                        <div class='row  text-center'>
+                        <div class='alert alert-danger'>
+                            Nie masz zwierząt do adopcji
+                        </div>
+
+                        </div>
+                    </div>
+                    
+                    ";
+                }
+                else{
+                                        foreach($animal_filtered as $row){
                     $t = substr($row['opis'],0,200);
                     echo '
                     <div class="col-lg-4 card-animal">
@@ -77,6 +90,8 @@ else{
                         echo '</div> </div>';
 
                     }
+                }
+
                 ?>
                 </div>
                 <div class="col-lg-4"></div>

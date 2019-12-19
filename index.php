@@ -47,24 +47,39 @@ $animal_display = $filter->getAllAdverts();
                 </div>
             </div>
             <div class="row">
-                
                 <?php
-                foreach($animal_display as $row){
-                    $t = substr($row['opis'],0,200);
-                    echo '
-                    <div class="col-lg-4 card-animal">
-                        <div class="row" style="flex-direction:column;padding:15px;">
-                            <p class="text-center"><img class="animal-img"src="/schronisko'.$row['zdjecie'].'"></p>
-                            <p>Imie:</p><p class="bg-primary">'.$row['imie'].'</p>
-                            <p>Gatunek:</p><p class="bg-primary">'.$row['gatunek'].'</p>
-                            <p>Rasa:</p><p class="bg-primary">'.$row['rasa'].'</p>
-                            <p>Płeć:</p><p class="bg-primary">'.$row['plec'].'</p>
-                            <p>Wiek:</p><p class="bg-primary">'.$row['wiek'].'</p>
-                            <p>Status:</p><p class="bg-primary">'.$row['status'].'</p>
-                            <p>Opis:</p><p>'.$t.'</p>
-                        </div> 
-                    </div>';
+                if($animal_display=="empty"){
+                    echo "
+                    <div class='col-lg-12'>
+                        <div class='row  text-center'>
+                        <div class='alert alert-danger'>
+                            Nie masz zwierząt do adopcji
+                        </div>
+
+                        </div>
+                    </div>
+                    
+                    ";
                 }
+                else{
+                    foreach($animal_display as $row){
+                        $t = substr($row['opis'],0,200);
+                        echo '
+                        <div class="col-lg-4 card-animal">
+                            <div class="row" style="flex-direction:column;padding:15px;">
+                                <p class="text-center"><img class="animal-img"src="/schronisko'.$row['zdjecie'].'"></p>
+                                <p>Imie:</p><p class="bg-primary">'.$row['imie'].'</p>
+                                <p>Gatunek:</p><p class="bg-primary">'.$row['gatunek'].'</p>
+                                <p>Rasa:</p><p class="bg-primary">'.$row['rasa'].'</p>
+                                <p>Płeć:</p><p class="bg-primary">'.$row['plec'].'</p>
+                                <p>Wiek:</p><p class="bg-primary">'.$row['wiek'].'</p>
+                                <p>Status:</p><p class="bg-primary">'.$row['status'].'</p>
+                                <p>Opis:</p><p>'.$t.'</p>
+                            </div> 
+                        </div>';
+                    }
+                }
+
                 ?>
                 </div>
                 <div class="col-lg-4"></div>

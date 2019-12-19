@@ -119,7 +119,14 @@ class Filter
         {
             $rows[] = $row;
         }
-        return $rows;
+        if (!isset($rows)){
+            $error_animal = "empty";
+            return $error_animal;
+        }
+        else{
+            return $rows;
+        }
+
     }
 
     public function getAllInHome()
@@ -130,6 +137,7 @@ class Filter
         {
             $rowt[] = $row;
         }
+
         return $rowt;
     }
 
@@ -225,7 +233,13 @@ class Filter
         {
             $rows[] = $row;
         }
-        return $rows;
+        if (!isset($rows)){
+            $error_animal = "empty";
+            return $error_animal;
+        }
+        else{
+            return $rows;
+        }
     }
 
 }
