@@ -110,7 +110,7 @@ class Filter
         }
         return $animal_data;
     }
-
+//filtracja po statusie
     public function getAllAdverts()
     {
         $query = "SELECT * FROM zwierzeta WHERE status = 'do adopcji'";
@@ -122,20 +122,94 @@ class Filter
         return $rows;
     }
 
-    public function getAllinhome()
+    public function getAllInHome()
     {
         $query = "SELECT * FROM zwierzeta WHERE status = 'w domu'";
         $result = $this->db->query($query) or die($this->db->error);
         while($row = $result->fetch_array(MYSQLI_ASSOC))
         {
-            $rows[] = $row;
+            $rowt[] = $row;
         }
-        return $rows;
+        return $rowt;
     }
 
-    public function getAllinheaven()
+    public function getAllInHeaven()
     {
         $query = "SELECT * FROM zwierzeta WHERE status = 'died'";
+        $result = $this->db->query($query) or die($this->db->error);
+        while($row = $result->fetch_array(MYSQLI_ASSOC))
+        {
+            $rowz[] = $row;
+        }
+        return $rowz;
+    }
+//filtracja po gatunku
+    public function getAllDog()
+    {
+        $query = "SELECT * FROM zwierzeta WHERE gatunek = 'pies'";
+        $result = $this->db->query($query) or die($this->db->error);
+        while($row = $result->fetch_array(MYSQLI_ASSOC))
+        {
+            $rowi[] = $row;
+        }
+        return $rowi;
+    }
+    public function getAllCat()
+    {
+        $query = "SELECT * FROM zwierzeta WHERE gatunek = 'kot'";
+        $result = $this->db->query($query) or die($this->db->error);
+        while($row = $result->fetch_array(MYSQLI_ASSOC))
+        {
+            $rowc[] = $row;
+        }
+        return $rowc;
+    }
+
+//fitracja po rasie
+    public function getAllMieszaniec()
+    {
+        $query = "SELECT * FROM zwierzeta WHERE rasa = 'Mieszaniec'";
+        $result = $this->db->query($query) or die($this->db->error);
+        while($row = $result->fetch_array(MYSQLI_ASSOC))
+        {
+            $rowm[] = $row;
+        }
+        return $rowm;
+    }
+    public function getAllJamnik()
+    {
+        $query = "SELECT * FROM zwierzeta WHERE rasa = 'Jamnik'";
+        $result = $this->db->query($query) or die($this->db->error);
+        while($row = $result->fetch_array(MYSQLI_ASSOC))
+        {
+            $rowj[] = $row;
+        }
+        return $rowj;
+    }
+    public function getAllKundel()
+    {
+        $query = "SELECT * FROM zwierzeta WHERE rasa = 'Kundel'";
+        $result = $this->db->query($query) or die($this->db->error);
+        while($row = $result->fetch_array(MYSQLI_ASSOC))
+        {
+            $rowk[] = $row;
+        }
+        return $rowk;
+    }
+//filtracja po plec
+    public function getAllPies()
+    {
+        $query = "SELECT * FROM zwierzeta WHERE plec = 'pies'";
+        $result = $this->db->query($query) or die($this->db->error);
+        while($row = $result->fetch_array(MYSQLI_ASSOC))
+        {
+            $rowp[] = $row;
+        }
+        return $rowp;
+    }
+    public function getAllSuka()
+    {
+        $query = "SELECT * FROM zwierzeta WHERE plec = 'suka'";
         $result = $this->db->query($query) or die($this->db->error);
         while($row = $result->fetch_array(MYSQLI_ASSOC))
         {
