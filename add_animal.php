@@ -10,9 +10,8 @@ if($_SESSION['rola']!=="admin"){
     <div class="container-fluid hero-container-pages">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h1 class="text-light display-1">Dodaj zwierzaka</h1>
+                <h1 class="text-light display-1">Dodaj wydarzzenie</h1>
             </div>
-        </div>
       </div>
 
 <?php
